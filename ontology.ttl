@@ -1,0 +1,172 @@
+@prefix : <https://example.org/sro#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://example.org/sro#> .
+
+<https://example.org/sro> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000114
+<http://purl.obolibrary.org/obo/IAO_0000114> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.allotrope.org/ontologies/property#AFX_0002834
+<http://purl.allotrope.org/ontologies/property#AFX_0002834> rdf:type owl:ObjectProperty ;
+                                                            owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                                            rdf:type owl:TransitiveProperty ;
+                                                            rdfs:label "follows"@en .
+
+
+###  http://purl.allotrope.org/ontologies/property#AFX_0002836
+<http://purl.allotrope.org/ontologies/property#AFX_0002836> rdf:type owl:ObjectProperty ;
+                                                            rdfs:subPropertyOf <http://purl.allotrope.org/ontologies/property#AFX_0002834> ;
+                                                            owl:inverseOf <http://purl.obolibrary.org/obo/RO_0002090> ;
+                                                            rdfs:label "immediately follows"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000051
+<http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "a core relation that holds between a whole and its part"@en ;
+                                             rdfs:label "has part"@en .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000063
+<http://purl.obolibrary.org/obo/BFO_0000063> rdf:type owl:ObjectProperty ,
+                                                      owl:TransitiveProperty ;
+                                             rdfs:label "precedes"@en .
+
+
+###  http://purl.obolibrary.org/obo/ECO_9000001
+<http://purl.obolibrary.org/obo/ECO_9000001> rdf:type owl:ObjectProperty ;
+                                             rdfs:label "uses"@en .
+
+
+###  http://purl.obolibrary.org/obo/RO_0002090
+<http://purl.obolibrary.org/obo/RO_0002090> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000063> ;
+                                            rdfs:label "immediately precedes"@en .
+
+
+###  https://example.org/sro#hasRecipeStep
+:hasRecipeStep rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
+               rdfs:domain <http://purl.obolibrary.org/obo/FOODON_00004081> ;
+               rdfs:range :RecipeStep ;
+               owl:propertyChainAxiom ( :hasRecipeStep
+                                        <http://purl.allotrope.org/ontologies/property#AFX_0002834>
+                                      ) ,
+                                      ( :hasRecipeStep
+                                        <http://purl.obolibrary.org/obo/BFO_0000063>
+                                      ) .
+
+
+###  https://example.org/sro#referencesIngredient
+:referencesIngredient rdf:type owl:ObjectProperty ;
+                      rdfs:range <http://purl.obolibrary.org/obo/FOODON_00001002> .
+
+
+###  https://example.org/sro#usesIngredient
+:usesIngredient rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://purl.obolibrary.org/obo/ECO_9000001> ;
+                owl:propertyChainAxiom ( :hasRecipeStep
+                                         :usesIngredient
+                                       ) ,
+                                       ( :usesIngredientQuantity
+                                         :referencesIngredient
+                                       ) .
+
+
+###  https://example.org/sro#usesIngredientQuantity
+:usesIngredientQuantity rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://purl.obolibrary.org/obo/ECO_9000001> ;
+                        owl:propertyChainAxiom ( :hasRecipeStep
+                                                 :usesIngredientQuantity
+                                               ) .
+
+
+###  https://qudt.org/schema/qudt/hasUnit
+<https://qudt.org/schema/qudt/hasUnit> rdf:type owl:ObjectProperty .
+
+
+###  https://qudt.org/schema/qudt/quantityValue
+<https://qudt.org/schema/qudt/quantityValue> rdf:type owl:ObjectProperty .
+
+
+###  https://www.w3.org/TR/owl-time/#time:hasDurationDescription
+<https://www.w3.org/TR/owl-time/#time:hasDurationDescription> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://schema.org/calories
+<http://schema.org/calories> rdf:type owl:DatatypeProperty .
+
+
+###  https://example.org/sro#hasCaloriesPer100g
+:hasCaloriesPer100g rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf <http://schema.org/calories> .
+
+
+###  https://qudt.org/schema/qudt/numericValue
+<https://qudt.org/schema/qudt/numericValue> rdf:type owl:DatatypeProperty .
+
+
+###  https://www.w3.org/TR/owl-time/#time:minutes
+<https://www.w3.org/TR/owl-time/#time:minutes> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/FOODON_00001002
+<http://purl.obolibrary.org/obo/FOODON_00001002> rdf:type owl:Class ;
+                                                 rdfs:label "food product"@en .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_00004081
+<http://purl.obolibrary.org/obo/FOODON_00004081> rdf:type owl:Class ;
+                                                 rdfs:label "food recipe"@en .
+
+
+###  https://example.org/sro#RecipeStep
+:RecipeStep rdf:type owl:Class .
+
+
+###  https://qudt.org/schema/qudt/QuantityValue
+<https://qudt.org/schema/qudt/QuantityValue> rdf:type owl:Class .
+
+
+###  https://qudt.org/schema/qudt/Unit
+<https://qudt.org/schema/qudt/Unit> rdf:type owl:Class .
+
+
+###  https://www.w3.org/TR/owl-time/#time:DurationDescription
+<https://www.w3.org/TR/owl-time/#time:DurationDescription> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,278 @@
+<h2 id="crossreference" class="list">Cross-reference for [Ontology Name] classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by [Ontology Name].
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.obolibrary.org/obo/FOODON_00001002" title="http://purl.obolibrary.org/obo/FOODON_00001002">food product</a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/FOODON_00004081" title="http://purl.obolibrary.org/obo/FOODON_00004081">food recipe</a></li>
+ </ul>
+ <div class="entity" id="http://purl.obolibrary.org/obo/FOODON_00001002">
+  <h3>food product<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/FOODON_00001002</p>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#referencesIngredient" title="https://example.org/sro#referencesIngredient">references Ingredient</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/FOODON_00004081">
+  <h3>food recipe<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/FOODON_00004081</p>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep">has Recipe Step</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://purl.allotrope.org/ontologies/property#AFX_0002834" title="http://purl.allotrope.org/ontologies/property#AFX_0002834">follows</a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a></li>
+  <li><a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep"> <span>has Recipe Step</span> </a></li>
+  <li><a href="#http://purl.allotrope.org/ontologies/property#AFX_0002836" title="http://purl.allotrope.org/ontologies/property#AFX_0002836">immediately follows</a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a></li>
+  <li><a href="#referencesIngredient" title="https://example.org/sro#referencesIngredient"> <span>references Ingredient</span> </a></li>
+  <li><a href="#http://purl.obolibrary.org/obo/ECO_9000001" title="http://purl.obolibrary.org/obo/ECO_9000001">uses</a></li>
+  <li><a href="#usesIngredient" title="https://example.org/sro#usesIngredient"> <span>uses Ingredient</span> </a></li>
+  <li><a href="#usesIngredientQuantity" title="https://example.org/sro#usesIngredientQuantity"> <span>uses Ingredient Quantity</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.allotrope.org/ontologies/property#AFX_0002834">
+  <h3>follows<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.allotrope.org/ontologies/property#AFX_0002834</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/property#AFX_0002836" title="http://purl.allotrope.org/ontologies/property#AFX_0002836">immediately follows</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000051">
+  <h3>has part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000051</p>
+  <div class="comment">
+   <span class="markdown">a core relation that holds between a whole and its part</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep">has Recipe Step</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasRecipeStep">
+  <h3>has Recipe Step<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/sro#hasRecipeStep</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000051" title="http://purl.obolibrary.org/obo/BFO_0000051">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/FOODON_00004081" title="http://purl.obolibrary.org/obo/FOODON_00004081">food recipe</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://example.org/sro#RecipeStep" target="_blank" title="https://example.org/sro#RecipeStep">Recipe Step</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep">has Recipe Step</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#http://purl.allotrope.org/ontologies/property#AFX_0002834" title="http://purl.allotrope.org/ontologies/property#AFX_0002834">follows</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dd>
+     <a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep">has Recipe Step</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.allotrope.org/ontologies/property#AFX_0002836">
+  <h3>immediately follows<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.allotrope.org/ontologies/property#AFX_0002836</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/property#AFX_0002834" title="http://purl.allotrope.org/ontologies/property#AFX_0002834">follows</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/RO_0002090">
+  <h3>immediately precedes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/RO_0002090</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/BFO_0000063" title="http://purl.obolibrary.org/obo/BFO_0000063">precedes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/property#AFX_0002836" title="http://purl.allotrope.org/ontologies/property#AFX_0002836">immediately follows</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/BFO_0000063">
+  <h3>precedes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/BFO_0000063</p>
+  <div class="description">
+   <p><strong>has characteristics: </strong> transitive</p>
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/RO_0002090" title="http://purl.obolibrary.org/obo/RO_0002090">immediately precedes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#http://purl.allotrope.org/ontologies/property#AFX_0002834" title="http://purl.allotrope.org/ontologies/property#AFX_0002834">follows</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="referencesIngredient">
+  <h3>references Ingredient<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/sro#referencesIngredient</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/FOODON_00001002" title="http://purl.obolibrary.org/obo/FOODON_00001002">food product</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.obolibrary.org/obo/ECO_9000001">
+  <h3>uses<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.obolibrary.org/obo/ECO_9000001</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#usesIngredient" title="https://example.org/sro#usesIngredient">uses Ingredient</a> <sup class="type-op" title="object property">op</sup>, <a href="#usesIngredientQuantity" title="https://example.org/sro#usesIngredientQuantity">uses Ingredient Quantity</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="usesIngredient">
+  <h3>uses Ingredient<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/sro#usesIngredient</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/ECO_9000001" title="http://purl.obolibrary.org/obo/ECO_9000001">uses</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep">has Recipe Step</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#usesIngredient" title="https://example.org/sro#usesIngredient">uses Ingredient</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dd>
+     <a href="#usesIngredientQuantity" title="https://example.org/sro#usesIngredientQuantity">uses Ingredient Quantity</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#referencesIngredient" title="https://example.org/sro#referencesIngredient">references Ingredient</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="usesIngredientQuantity">
+  <h3>uses Ingredient Quantity<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/sro#usesIngredientQuantity</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.obolibrary.org/obo/ECO_9000001" title="http://purl.obolibrary.org/obo/ECO_9000001">uses</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#hasRecipeStep" title="https://example.org/sro#hasRecipeStep">has Recipe Step</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#usesIngredientQuantity" title="https://example.org/sro#usesIngredientQuantity">uses Ingredient Quantity</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasCaloriesPer100g" title="https://example.org/sro#hasCaloriesPer100g"> <span>has Calories Per100g</span> </a></li>
+ </ul>
+ <div class="entity" id="hasCaloriesPer100g">
+  <h3>has Calories Per100g<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://example.org/sro#hasCaloriesPer100g</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="http://schema.org/calories" target="_blank" title="http://schema.org/calories">calories</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>

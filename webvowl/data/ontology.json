@@ -1,0 +1,392 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://schema.org", "http://purl.allotrope.org/ontologies/property", "http://purl.obolibrary.org/obo", "https://qudt.org/schema/qudt", "http://www.w3.org/2000/01/rdf-schema", "https://example.org/sro", "https://www.w3.org/TR/owl-time/" ],
+    "iri" : "https://example.org/sro"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "10",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://purl.obolibrary.org/obo/FOODON_00001002",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FOODON_00001002",
+      "en" : "food product"
+    },
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://example.org/sro#RecipeStep",
+    "baseIri" : "https://example.org/sro",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RecipeStep"
+    },
+    "id" : "4"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "10",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "11",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://qudt.org/schema/qudt/Unit",
+    "baseIri" : "https://qudt.org/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Unit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "2",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/FOODON_00004081",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FOODON_00004081",
+      "en" : "food recipe"
+    },
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://www.w3.org/TR/owl-time/#time:DurationDescription",
+    "baseIri" : "https://www.w3.org/TR/owl-time/",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "time:DurationDescription"
+    },
+    "attributes" : [ "external" ],
+    "id" : "26"
+  }, {
+    "iri" : "https://qudt.org/schema/qudt/QuantityValue",
+    "baseIri" : "https://qudt.org/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "QuantityValue"
+    },
+    "attributes" : [ "external" ],
+    "id" : "28"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "7",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://purl.obolibrary.org/obo/BFO_0000063",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "BFO_0000063",
+      "en" : "precedes"
+    },
+    "domain" : "2",
+    "subproperty" : [ "3" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/ECO_9000001",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "ECO_9000001",
+      "en" : "uses"
+    },
+    "domain" : "2",
+    "subproperty" : [ "6", "7" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://schema.org/calories",
+    "baseIri" : "http://schema.org",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "calories"
+    },
+    "domain" : "2",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/RO_0002090",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "RO_0002090",
+      "en" : "immediately precedes"
+    },
+    "superproperty" : [ "1" ],
+    "domain" : "2",
+    "attributes" : [ "object", "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "https://www.w3.org/TR/owl-time/#time:hasDurationDescription",
+    "baseIri" : "https://www.w3.org/TR/owl-time/",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "time:hasDurationDescription"
+    },
+    "domain" : "2",
+    "attributes" : [ "object", "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://www.w3.org/TR/owl-time/#time:minutes",
+    "baseIri" : "https://www.w3.org/TR/owl-time/",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "time:minutes"
+    },
+    "domain" : "2",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://purl.allotrope.org/ontologies/property#AFX_0002834",
+    "inverse" : "1",
+    "baseIri" : "http://purl.allotrope.org/ontologies/property",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "AFX_0002834",
+      "en" : "follows"
+    },
+    "domain" : "2",
+    "subproperty" : [ "18" ],
+    "attributes" : [ "transitive", "object", "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://example.org/sro#referencesIngredient",
+    "baseIri" : "https://example.org/sro",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "referencesIngredient"
+    },
+    "domain" : "10",
+    "attributes" : [ "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://qudt.org/schema/qudt/hasUnit",
+    "baseIri" : "https://qudt.org/schema/qudt",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasUnit"
+    },
+    "domain" : "2",
+    "attributes" : [ "object", "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://purl.allotrope.org/ontologies/property#AFX_0002836",
+    "inverse" : "3",
+    "baseIri" : "http://purl.allotrope.org/ontologies/property",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "AFX_0002836",
+      "en" : "immediately follows"
+    },
+    "superproperty" : [ "17" ],
+    "domain" : "2",
+    "attributes" : [ "object", "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://qudt.org/schema/qudt/numericValue",
+    "baseIri" : "https://qudt.org/schema/qudt",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "numericValue"
+    },
+    "domain" : "2",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://purl.obolibrary.org/obo/BFO_0000051",
+    "baseIri" : "http://purl.obolibrary.org/obo",
+    "range" : "2",
+    "annotations" : {
+      "IAO_0000115" : [ {
+        "identifier" : "IAO_0000115",
+        "language" : "en",
+        "value" : "a core relation that holds between a whole and its part",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "BFO_0000051",
+      "en" : "has part"
+    },
+    "domain" : "2",
+    "subproperty" : [ "23" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://example.org/sro#hasCaloriesPer100g",
+    "baseIri" : "https://example.org/sro",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasCaloriesPer100g"
+    },
+    "domain" : "2",
+    "attributes" : [ "datatype" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://example.org/sro#usesIngredientQuantity",
+    "baseIri" : "https://example.org/sro",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "usesIngredientQuantity"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://example.org/sro#usesIngredient",
+    "baseIri" : "https://example.org/sro",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "usesIngredient"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "2",
+    "attributes" : [ "object" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://example.org/sro#hasRecipeStep",
+    "baseIri" : "https://example.org/sro",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasRecipeStep"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "25",
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://qudt.org/schema/qudt/quantityValue",
+    "baseIri" : "https://qudt.org/schema/qudt",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "quantityValue"
+    },
+    "domain" : "2",
+    "attributes" : [ "object", "external" ],
+    "id" : "27"
+  } ]
+}
