@@ -1,0 +1,20 @@
+PREFIX sro: <https://example.org/sro#>
+PREFIX inst: <https://www.example.org/abox#>
+PREFIX qudt: <https://qudt.org/schema/qudt/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?ingredientName ?quantity ?unit ?calories WHERE {
+  ?recipe rdfs:label "{sparql_param}"@en .
+  ?recipe sro:usesIngredient ?ingredient .
+          
+  ?ingredient rdfs:label ?ingredientName ;
+              sro:referencesFoodProduct ?foodProduct ;
+              qudt:quantityValue ?quantityValue .
+
+  ?quantityValue qudt:numericValue ?quantity ;
+                 qudt:hasUnit ?unitLabel .
+  
+  ?foodProduct schema:calories ?calories .
+  ?unitLabel rdfs:label ?unit .
+}

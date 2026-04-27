@@ -1,0 +1,444 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sro: <https://example.org/sro#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix inst: <https://www.example.org/abox#> .
+@prefix qudt: <https://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <https://www.w3.org/TR/owl-time/#> .
+@prefix foodon: <http://purl.obolibrary.org/obo/> .
+@prefix schema: <http://schema.org/> .
+@base <http://www.semanticweb.org/owl/owlapi/turtle#> .
+
+<https://www.example.org/abox> rdf:type owl:Ontology .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://qudt.org/schema/qudt/GM
+qudt:GM rdf:type owl:NamedIndividual ,
+                 qudt:Unit ;
+        rdfs:label "Gram"@en .
+
+
+###  https://qudt.org/schema/qudt/Piece
+qudt:Piece rdf:type owl:NamedIndividual ,
+                    qudt:Unit ;
+           rdfs:label "Piece"@en .
+
+
+###  https://qudt.org/schema/qudt/TBSP
+qudt:TBSP rdf:type owl:NamedIndividual ,
+                   qudt:Unit ;
+          rdfs:label "Tablespoon"@en .
+
+
+###  https://www.example.org/abox#ButterIngredient
+inst:ButterIngredient rdf:type owl:NamedIndividual ,
+                               foodon:FOODON_00004274 ;
+                      rdfs:label "Butter"@en ;
+                      sro:referencesFoodProduct inst:Butter ;
+                      qudt:quantityValue :ButterQuantity .
+
+
+###  https://www.example.org/abox#Butter
+inst:Butter rdf:type owl:NamedIndividual ,
+                            foodon:FOODON_00001002 ,
+                            foodon:FOODON_00004242 ;
+                   schema:calories 102 ;
+                   rdfs:label "Butter"@en .
+
+
+###  https://www.example.org/abox#ButterQuantity
+inst:ButterQuantity rdf:type owl:NamedIndividual ,
+                             qudt:QuantityValue ;
+                    qudt:hasUnit qudt:GM ;
+                    qudt:numericValue 10 .
+
+
+###  https://www.example.org/abox#Duration10Minutes
+inst:Duration10Minutes rdf:type owl:NamedIndividual ,
+                                time:DurationDescription ;
+                       time:minutes 10 .
+
+
+###  https://www.example.org/abox#Duration15Minutes
+inst:Duration15Minutes rdf:type owl:NamedIndividual ,
+                                time:DurationDescription ;
+                       time:minutes 15 .
+
+
+###  https://www.example.org/abox#Duration2Minutes
+inst:Duration2Minutes rdf:type owl:NamedIndividual ,
+                               time:DurationDescription ;
+                      time:minutes 2 .
+
+
+###  https://www.example.org/abox#Duration3Minutes
+inst:Duration3Minutes rdf:type owl:NamedIndividual ,
+                               time:DurationDescription ;
+                      time:minutes 3 .
+
+
+###  https://www.example.org/abox#Duration7Minutes
+inst:Duration7Minutes rdf:type owl:NamedIndividual ,
+                               time:DurationDescription ;
+                      time:minutes 7 .
+
+
+###  https://www.example.org/abox#EggIngredient
+inst:EggIngredient rdf:type owl:NamedIndividual ,
+                            foodon:FOODON_00004274 ;
+                   rdfs:label "Eggs"@en ;
+                   sro:referencesFoodProduct inst:Egg ;
+                   qudt:quantityValue :EggQuantity .
+
+
+###  https://www.example.org/abox#Egg
+inst:Egg rdf:type owl:NamedIndividual ,
+                         foodon:FOODON_00001002 ,
+                         foodon:FOODON_00004242 ;
+                schema:calories 72 ;
+                rdfs:label "Egg"@en .
+
+
+###  https://www.example.org/abox#EggQuantity
+inst:EggQuantity rdf:type owl:NamedIndividual ,
+                          qudt:QuantityValue ;
+                 qudt:hasUnit qudt:Piece ;
+                 qudt:numericValue 3 .
+
+
+###  https://www.example.org/abox#Frying
+inst:Frying rdf:type owl:NamedIndividual ,
+                     foodon:FOODON_03450002 ;
+            rdfs:label "Frying"@en .
+
+
+###  https://www.example.org/abox#GarlicIngredient
+inst:GarlicIngredient rdf:type owl:NamedIndividual ,
+                               foodon:FOODON_00004274 ;
+                      rdfs:label "Garlic Clove Ingredient"@en ,
+                                 "Garlic Cloves"@en ;
+                      sro:referencesFoodProduct inst:Garlic ;
+                      qudt:quantityValue inst:GarlicQuantity .
+
+
+###  https://www.example.org/abox#Garlic
+inst:Garlic rdf:type owl:NamedIndividual ,
+                            foodon:FOODON_00001002 ,
+                            foodon:FOODON_00001015 ;
+                   schema:calories 4 ,
+                                   4 ,
+                                   5 ;
+                   rdfs:label "Garlic"@en ,
+                              "Garlic Clove"@en .
+
+
+###  https://www.example.org/abox#GarlicQuantity
+inst:GarlicQuantity rdf:type owl:NamedIndividual ,
+                             qudt:QuantityValue ;
+                    qudt:hasUnit qudt:Piece ;
+                    qudt:numericValue 2 .
+
+
+###  https://www.example.org/abox#HerbIngredient
+inst:HerbIngredient rdf:type owl:NamedIndividual ,
+                             foodon:FOODON_00004274 ;
+                    rdfs:label "Fresh Herbs"@en ;
+                    sro:referencesFoodProduct inst:Herb ;
+                    qudt:quantityValue inst:HerbQuantity .
+
+
+###  https://www.example.org/abox#HerbOmelette
+inst:HerbOmelette rdf:type owl:NamedIndividual ,
+                           foodon:FOODON_00004081 ;
+                  rdfs:label "Herb Omelette"@en ;
+                  sro:hasRecipeStep inst:StepCookOmelette ,
+                                    inst:StepCrackEggs ,
+                                    inst:StepWhiskEggs .
+
+
+###  https://www.example.org/abox#HerbProduct
+inst:Herb rdf:type owl:NamedIndividual ,
+                          foodon:FOODON_00001002 ,
+                          foodon:FOODON_00001015 ;
+                 schema:calories 2 ;
+                 rdfs:label "Fresh Herbs"@en .
+
+
+###  https://www.example.org/abox#HerbQuantity
+inst:HerbQuantity rdf:type owl:NamedIndividual ,
+                           qudt:QuantityValue ;
+                  qudt:hasUnit qudt:GM ;
+                  qudt:numericValue 10 .
+
+
+###  https://www.example.org/abox#MilkIngredient
+inst:MilkIngredient rdf:type owl:NamedIndividual ,
+                             foodon:FOODON_00004274 ;
+                    rdfs:label "Milk"@en ;
+                    sro:referencesFoodProduct inst:Milk ;
+                    qudt:quantityValue inst:MilkQuantity .
+
+
+###  https://www.example.org/abox#Milk
+inst:Milk rdf:type owl:NamedIndividual ,
+                          foodon:FOODON_00001002 ,
+                          foodon:FOODON_00004242 ;
+                 schema:calories 42 ;
+                 rdfs:label "Milk"@en .
+
+
+###  https://www.example.org/abox#MilkQuantity
+inst:MilkQuantity rdf:type owl:NamedIndividual ,
+                           qudt:QuantityValue ;
+                  qudt:hasUnit qudt:GM ;
+                  qudt:numericValue 50 .
+
+
+###  https://www.example.org/abox#OliveOilIngredient
+inst:OliveOilIngredient rdf:type owl:NamedIndividual ,
+                                 foodon:FOODON_00004274 ;
+                        rdfs:label "Olive Oil"@en ,
+                                   "Olive Oil Ingredient"@en ;
+                        sro:referencesFoodProduct inst:OliveOil ;
+                        qudt:quantityValue :OliveOilQuantity .
+
+
+###  https://www.example.org/abox#OliveOil
+inst:OliveOil rdf:type owl:NamedIndividual ,
+                              foodon:FOODON_00001002 ,
+                              foodon:FOODON_00001015 ;
+                     schema:calories 120 ,
+                                     119 ,
+                                     120 ;
+                     rdfs:label "Olive Oil"@en .
+
+
+###  https://www.example.org/abox#OliveOilQuantity
+inst:OliveOilQuantity rdf:type owl:NamedIndividual ,
+                               qudt:QuantityValue ;
+                      qudt:hasUnit qudt:MilliL ,
+                                   qudt:TBSP ;
+                      qudt:numericValue 15 ,
+                                        2 .
+
+
+###  https://www.example.org/abox#OnionIngredient
+inst:OnionIngredient rdf:type owl:NamedIndividual ,
+                              foodon:FOODON_00004274 ;
+                     rdfs:label "Onion Ingredient"@en ;
+                     sro:referencesFoodProduct inst:Onion ;
+                     qudt:quantityValue inst:OnionQuantity .
+
+
+###  https://www.example.org/abox#Onion
+inst:Onion rdf:type owl:NamedIndividual ,
+                           foodon:FOODON_00001002 ,
+                           foodon:FOODON_00001015 ;
+                  schema:calories 40 ;
+                  rdfs:label "Onion"@en .
+
+
+###  https://www.example.org/abox#OnionQuantity
+inst:OnionQuantity rdf:type owl:NamedIndividual ,
+                            qudt:QuantityValue ;
+                   qudt:hasUnit qudt:Piece ;
+                   qudt:numericValue 1 .
+
+
+###  https://www.example.org/abox#PastaIngredient
+inst:PastaIngredient rdf:type owl:NamedIndividual ,
+                              foodon:FOODON_00004274 ;
+                     rdfs:label "Pasta"@en ;
+                     sro:referencesFoodProduct inst:Pasta ;
+                     qudt:quantityValue :PastaQuantity .
+
+
+###  https://www.example.org/abox#Pasta
+inst:Pasta rdf:type owl:NamedIndividual ,
+                           foodon:FOODON_00001002 ,
+                           foodon:FOODON_00001015 ;
+                  schema:calories 350 ;
+                  rdfs:label "Pasta"@en .
+
+
+###  https://www.example.org/abox#PastaQuantity
+inst:PastaQuantity rdf:type owl:NamedIndividual ,
+                            qudt:QuantityValue ;
+                   qudt:hasUnit qudt:GM ;
+                   qudt:numericValue 200 .
+
+
+###  https://www.example.org/abox#Sauteing
+inst:Sauteing rdf:type owl:NamedIndividual ,
+                       foodon:FOODON_03450002 ;
+              rdfs:label "Sauteing"@en .
+
+
+###  https://www.example.org/abox#Simmering
+inst:Simmering rdf:type owl:NamedIndividual ,
+                        foodon:FOODON_03450002 ;
+               rdfs:label "Simmering"@en .
+
+
+###  https://www.example.org/abox#SpaghettiIngredient
+inst:SpaghettiIngredient rdf:type owl:NamedIndividual ,
+                                  foodon:FOODON_00004274 ;
+                         rdfs:label "Spaghetti Ingredient"@en ;
+                         sro:referencesFoodProduct :Spaghetti ;
+                         qudt:quantityValue :SpaghettiQuantity .
+
+
+###  https://www.example.org/abox#Spaghetti
+inst:Spaghetti rdf:type owl:NamedIndividual ,
+                               foodon:FOODON_00001002 ,
+                               foodon:FOODON_00001015 ;
+                      schema:calories 350 ;
+                      rdfs:label "Spaghetti"@en .
+
+
+###  https://www.example.org/abox#SpaghettiQuantity
+inst:SpaghettiQuantity rdf:type owl:NamedIndividual ,
+                                qudt:QuantityValue ;
+                       qudt:hasUnit qudt:GM ;
+                       qudt:numericValue 200 .
+
+
+###  https://www.example.org/abox#SpaghettiWithTomatoSauce
+inst:SpaghettiWithTomatoSauce rdf:type owl:NamedIndividual ,
+                                       foodon:FOODON_00004081 ;
+                              rdfs:label "Spaghetti with Tomato Sauce"@en ;
+                              sro:hasRecipeStep inst:StepBoilWater ,
+                                                inst:StepCombine ,
+                                                inst:StepCookSpaghetti ,
+                                                inst:StepPrepareSauce .
+
+
+###  https://www.example.org/abox#StepBoilPasta
+inst:StepBoilPasta rdf:type owl:NamedIndividual ,
+                            sro:RecipeStep ;
+                   rdfs:label "Boil Pasta"@en ;
+                   sro:usesIngredient inst:PastaIngredient ;
+                   time:hasDurationDescription :Duration10Minutes .
+
+
+###  https://www.example.org/abox#StepBoilWater
+inst:StepBoilWater rdf:type owl:NamedIndividual ,
+                            sro:RecipeStep ;
+                   foodon:RO_0002090 inst:StepCookSpaghetti ;
+                   rdfs:label "Boil Water"@en ;
+                   sro:usesCookingMethod inst:Boiling ;
+                   time:hasDurationDescription inst:Duration7Minutes .
+
+
+###  https://www.example.org/abox#StepCombine
+inst:StepCombine rdf:type owl:NamedIndividual ,
+                          sro:RecipeStep ;
+                 rdfs:label "Combine Spaghetti and Sauce"@en ;
+                 time:hasDurationDescription inst:Duration2Minutes .
+
+
+###  https://www.example.org/abox#StepCombinePastaSauce
+inst:StepCombinePastaSauce rdf:type owl:NamedIndividual ,
+                                    sro:RecipeStep ;
+                           foodon:RO_0002090 inst:StepServeDish ;
+                           rdfs:label "Combine Pasta with Tomato Sauce"@en ;
+                           time:hasDurationDescription inst:Duration2Minutes .
+
+
+###  https://www.example.org/abox#StepCookOmelette
+inst:StepCookOmelette rdf:type owl:NamedIndividual ,
+                               sro:RecipeStep ;
+                      rdfs:label "Cook Omelette"@en ;
+                      sro:usesCookingMethod :Frying ;
+                      sro:usesIngredient :ButterIngredient ;
+                      time:hasDurationDescription inst:Duration5Minutes .
+
+
+###  https://www.example.org/abox#StepCookSpaghetti
+inst:StepCookSpaghetti rdf:type owl:NamedIndividual ,
+                                sro:RecipeStep ;
+                       foodon:RO_0002090 inst:StepPrepareSauce ;
+                       rdfs:label "Cook Spaghetti"@en ;
+                       sro:usesCookingMethod inst:Boiling ;
+                       sro:usesIngredient inst:SpaghettiIngredient ;
+                       time:hasDurationDescription inst:Duration10Minutes .
+
+
+###  https://www.example.org/abox#StepCrackEggs
+inst:StepCrackEggs rdf:type owl:NamedIndividual ,
+                            sro:RecipeStep ;
+                   rdfs:label "Crack Eggs into Bowl"@en ;
+                   sro:usesIngredient inst:EggIngredient ;
+                   time:hasDurationDescription inst:Duration2Minutes .
+
+
+###  https://www.example.org/abox#StepPrepareSauce
+inst:StepPrepareSauce rdf:type owl:NamedIndividual ,
+                               sro:RecipeStep ;
+                      foodon:RO_0002090 inst:StepCombine ;
+                      rdfs:label "Prepare Tomato Sauce"@en ;
+                      sro:usesCookingMethod inst:Sauteing ,
+                                            inst:Simmering ;
+                      sro:usesIngredient inst:GarlicIngredient ,
+                                         inst:OliveOilIngredient ,
+                                         inst:OnionIngredient ,
+                                         inst:TomatoIngredient ;
+                      time:hasDurationDescription inst:Duration15Minutes .
+
+
+###  https://www.example.org/abox#StepServeDish
+inst:StepServeDish rdf:type owl:NamedIndividual ,
+                            sro:RecipeStep ;
+                   rdfs:label "Serve Pasta with Tomato Sauce"@en .
+
+
+###  https://www.example.org/abox#StepWhiskEggs
+inst:StepWhiskEggs rdf:type owl:NamedIndividual ,
+                            sro:RecipeStep ;
+                   foodon:RO_0002090 :StepCookOmelette ;
+                   rdfs:label "Whisk Eggs with Milk and Herbs"@en ;
+                   sro:usesIngredient inst:HerbIngredient ,
+                                      inst:MilkIngredient ;
+                   time:hasDurationDescription inst:Duration3Minutes .
+
+
+###  https://www.example.org/abox#TomatoIngredient
+inst:TomatoIngredient rdf:type owl:NamedIndividual ,
+                               foodon:FOODON_00004274 ;
+                      rdfs:label "Tomato Ingredient"@en ,
+                                 "Tomatoes"@en ;
+                      sro:referencesFoodProduct inst:Tomato ;
+                      qudt:quantityValue inst:TomatoQuantity .
+
+
+###  https://www.example.org/abox#TomatoPasta
+inst:TomatoPasta rdf:type owl:NamedIndividual ,
+                          foodon:FOODON_00004081 ;
+                 rdfs:label "Pasta with Tomato Sauce"@en ;
+                 sro:hasRecipeStep inst:StepBoilPasta ,
+                                   inst:StepCombinePastaSauce ,
+                                   inst:StepPrepareSauce .
+
+
+###  https://www.example.org/abox#Tomato
+inst:Tomato rdf:type owl:NamedIndividual ,
+                            foodon:FOODON_00001002 ,
+                            foodon:FOODON_00001015 ; 
+                   schema:calories 18 ;
+                   rdfs:label "Fresh Tomatoes"@en ,
+                              "Tomatoes"@en .
+
+
+###  https://www.example.org/abox#TomatoQuantity
+inst:TomatoQuantity rdf:type owl:NamedIndividual ,
+                             qudt:QuantityValue ;
+                    qudt:hasUnit qudt:GM ;
+                    qudt:numericValue 150 ,
+                                      400 .

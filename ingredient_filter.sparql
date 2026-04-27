@@ -1,0 +1,14 @@
+PREFIX inst: <https://www.example.org/abox#>
+PREFIX sro: <https://example.org/sro#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?recipe_name
+WHERE {
+  ?recipe sro:hasRecipeStep ?step .
+  ?step sro:usesIngredient ?ingredient .
+  ?ingredient sro:referencesFoodProduct ?foodProduct .
+  ?recipe rdfs:label ?recipe_name
+  VALUES ?foodProduct { {sparql_param} }
+}
+GROUP BY ?recipe_name
+HAVING (COUNT(DISTINCT ?foodProduct) = {param_count})
