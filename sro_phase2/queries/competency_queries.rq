@@ -1,0 +1,59 @@
+PREFIX sro: <https://example.org/sro#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# CQ1: Which recipes are vegetarian or vegan?
+SELECT ?recipe ?label ?diet WHERE {
+  ?recipe a sro:Recipe ; rdfs:label ?label ; sro:suitableForDiet ?diet .
+  FILTER(?diet IN (sro:VegetarianDiet, sro:VeganDiet))
+}
+
+# CQ2: Which recipes use a specific ingredient? Example: chickpea.
+SELECT ?recipe ?label WHERE {
+  ?recipe a sro:Recipe ; rdfs:label ?label ; sro:hasIngredientUsage ?usage .
+  ?usage sro:usesIngredient sro:Chickpea .
+}
+
+# CQ3: What ingredients are used in a recipe? Example: Mediterranean Chickpea Salad.
+SELECT ?ingredientLabel ?quantity ?unit WHERE {
+  sro:MediterraneanChickpeaSalad sro:hasIngredientUsage ?usage .
+  ?usage sro:usesIngredient ?ingredient ; sro:quantityValue ?quantity ; sro:unitLabel ?unit .
+  ?ingredient rdfs:label ?ingredientLabel .
+}
+ORDER BY ?ingredientLabel
+
+# CQ4: How many calories does a recipe contain per serving?
+SELECT ?recipeLabel ?calories WHERE {
+  ?recipe a sro:Recipe ; rdfs:label ?recipeLabel ; sro:hasNutritionProfile ?nutrition .
+  ?nutrition sro:caloriesPerServing ?calories .
+}
+ORDER BY ?recipeLabel
+
+# CQ5: How long does it take to cook/prepare a recipe?
+SELECT ?recipeLabel ?prep ?cook ?total WHERE {
+  ?recipe a sro:Recipe ; rdfs:label ?recipeLabel ;
+          sro:prepTimeMinutes ?prep ;
+          sro:cookTimeMinutes ?cook ;
+          sro:totalTimeMinutes ?total .
+}
+ORDER BY ?total
+
+# CQ6: Which kitchen utilities are required for a recipe?
+SELECT DISTINCT ?recipeLabel ?utilityLabel WHERE {
+  ?recipe a sro:Recipe ; rdfs:label ?recipeLabel ; sro:hasPreparationStep ?step .
+  ?step sro:requiresUtility ?utility .
+  ?utility rdfs:label ?utilityLabel .
+}
+ORDER BY ?recipeLabel ?utilityLabel
+
+# CQ7: What are the sequential steps of a recipe?
+SELECT ?stepNo ?text WHERE {
+  sro:MediterraneanChickpeaSalad sro:hasPreparationStep ?step .
+  ?step sro:stepNumber ?stepNo ; sro:instructionText ?text .
+}
+ORDER BY ?stepNo
+
+# CQ8: Which recipes are suitable for a gluten-free diet?
+SELECT ?recipeLabel WHERE {
+  ?recipe a sro:Recipe ; rdfs:label ?recipeLabel ; sro:suitableForDiet sro:GlutenFreeDiet .
+}
+ORDER BY ?recipeLabel

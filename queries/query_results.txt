@@ -1,0 +1,50 @@
+CQ1: Which recipes are vegetarian or vegan?
+Rows: 3
+  - https://example.org/sro#MediterraneanChickpeaSalad | Mediterranean Chickpea Salad | https://example.org/sro#VeganDiet
+  - https://example.org/sro#MediterraneanChickpeaSalad | Mediterranean Chickpea Salad | https://example.org/sro#VegetarianDiet
+  - https://example.org/sro#VegetableOmelette | Vegetable Omelette | https://example.org/sro#VegetarianDiet
+
+CQ2: Which recipes use a specific ingredient? Example: chickpea.
+Rows: 1
+  - https://example.org/sro#MediterraneanChickpeaSalad | Mediterranean Chickpea Salad
+
+CQ3: What ingredients are used in a recipe? Example: Mediterranean Chickpea Salad.
+Rows: 5
+  - chickpea | 240 | gram
+  - cucumber | 1 | piece
+  - lemon juice | 1 | tablespoon
+  - olive oil | 2 | tablespoon
+  - tomato | 2 | piece
+
+CQ4: How many calories does a recipe contain per serving?
+Rows: 3
+  - Chicken Rice Bowl | 520
+  - Mediterranean Chickpea Salad | 250
+  - Vegetable Omelette | 310
+
+CQ5: How long does it take to cook/prepare a recipe?
+Rows: 3
+  - Mediterranean Chickpea Salad | 10 | 0 | 10
+  - Vegetable Omelette | 5 | 8 | 13
+  - Chicken Rice Bowl | 10 | 25 | 35
+
+CQ6: Which kitchen utilities are required for a recipe?
+Rows: 7
+  - Chicken Rice Bowl | Pan
+  - Chicken Rice Bowl | Pot
+  - Mediterranean Chickpea Salad | Cutting board
+  - Mediterranean Chickpea Salad | Knife
+  - Mediterranean Chickpea Salad | Mixing bowl
+  - Vegetable Omelette | Mixing bowl
+  - Vegetable Omelette | Pan
+
+CQ7: What are the sequential steps of a recipe?
+Rows: 3
+  - 1 | Dice cucumber and tomatoes.
+  - 2 | Combine chickpeas, cucumber, tomatoes, olive oil, and lemon juice in a mixing bowl.
+  - 3 | Mix and serve chilled.
+
+CQ8: Which recipes are suitable for a gluten-free diet?
+Rows: 2
+  - Mediterranean Chickpea Salad
+  - Vegetable Omelette

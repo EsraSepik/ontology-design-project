@@ -1,0 +1,448 @@
+@prefix sro: <https://example.org/sro#> .
+@prefix schema: <https://schema.org/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sro: a owl:Ontology ;
+    dcterms:title "Smart Recipe Ontology (SRO)"@en ;
+    dcterms:creator "Aleyna Gultekin 220315013"@en,
+        "Esra Sepik 220315015"@en,
+        "Sinem Tanriver 220315073"@en ;
+    dcterms:created "2026-04-25"^^xsd:date ;
+    dcterms:modified "2026-05-08"^^xsd:date ;
+    owl:versionInfo "2.0" ;
+    dcterms:description "Phase 2 extension of the Smart Recipe Ontology. The ontology represents recipes, ingredient usages, preparation steps, dietary tags, nutrition profiles, utilities, cuisine, data provenance, and data-acquisition confidence for recipe search and question answering."@en ;
+    rdfs:seeAlso <https://schema.org/Recipe>, <https://schema.org/NutritionInformation>, <http://qudt.org/> .
+
+#################################################################
+# Classes
+#################################################################
+
+sro:Recipe a owl:Class ;
+    rdfs:label "Recipe"@en ;
+    rdfs:subClassOf schema:Recipe ;
+    rdfs:comment "A cooking recipe with ingredients, ordered steps, time, diet, cuisine, nutrition, and source metadata."@en .
+
+sro:VegetarianRecipe a owl:Class ;
+    rdfs:label "Vegetarian recipe"@en ;
+    rdfs:subClassOf sro:Recipe .
+
+sro:VeganRecipe a owl:Class ;
+    rdfs:label "Vegan recipe"@en ;
+    rdfs:subClassOf sro:VegetarianRecipe .
+
+sro:GlutenFreeRecipe a owl:Class ;
+    rdfs:label "Gluten-free recipe"@en ;
+    rdfs:subClassOf sro:Recipe .
+
+sro:Ingredient a owl:Class ;
+    rdfs:label "Ingredient"@en ;
+    rdfs:comment "A food item used in a recipe."@en .
+
+sro:PlantBasedIngredient a owl:Class ;
+    rdfs:label "Plant-based ingredient"@en ;
+    rdfs:subClassOf sro:Ingredient .
+
+sro:AnimalBasedIngredient a owl:Class ;
+    rdfs:label "Animal-based ingredient"@en ;
+    rdfs:subClassOf sro:Ingredient .
+
+sro:MeatIngredient a owl:Class ;
+    rdfs:label "Meat ingredient"@en ;
+    rdfs:subClassOf sro:AnimalBasedIngredient .
+
+sro:DairyIngredient a owl:Class ;
+    rdfs:label "Dairy ingredient"@en ;
+    rdfs:subClassOf sro:AnimalBasedIngredient .
+
+sro:EggIngredient a owl:Class ;
+    rdfs:label "Egg ingredient"@en ;
+    rdfs:subClassOf sro:AnimalBasedIngredient .
+
+sro:GlutenContainingIngredient a owl:Class ;
+    rdfs:label "Gluten-containing ingredient"@en ;
+    rdfs:subClassOf sro:Ingredient .
+
+sro:Allergen a owl:Class ;
+    rdfs:label "Allergen"@en ;
+    rdfs:comment "A possible allergen associated with a recipe or ingredient."@en .
+
+sro:IngredientUsage a owl:Class ;
+    rdfs:label "Ingredient usage"@en ;
+    rdfs:comment "N-ary relation object connecting a recipe to an ingredient with quantity, unit, preparation state, and confidence."@en .
+
+sro:PreparationStep a owl:Class ;
+    rdfs:label "Preparation step"@en ;
+    rdfs:subClassOf schema:HowToStep ;
+    rdfs:comment "An ordered instruction in a recipe workflow."@en .
+
+sro:NutritionProfile a owl:Class ;
+    rdfs:label "Nutrition profile"@en ;
+    rdfs:subClassOf schema:NutritionInformation ;
+    rdfs:comment "Nutritional values for one serving or for the whole recipe."@en .
+
+sro:DietType a owl:Class ;
+    rdfs:label "Diet type"@en .
+
+sro:Cuisine a owl:Class ;
+    rdfs:label "Cuisine"@en .
+
+sro:CourseCategory a owl:Class ;
+    rdfs:label "Course category"@en .
+
+sro:CookingMethod a owl:Class ;
+    rdfs:label "Cooking method"@en .
+
+sro:KitchenUtility a owl:Class ;
+    rdfs:label "Kitchen utility"@en .
+
+sro:Unit a owl:Class ;
+    rdfs:label "Unit"@en ;
+    rdfs:seeAlso qudt:Unit .
+
+sro:DataSource a owl:Class ;
+    rdfs:label "Data source"@en .
+
+sro:UserPreference a owl:Class ;
+    rdfs:label "User preference"@en ;
+    rdfs:comment "Preference profile for future personalized recipe recommendation."@en .
+
+sro:PlantBasedIngredient owl:disjointWith sro:MeatIngredient .
+sro:VeganRecipe rdfs:subClassOf sro:VegetarianRecipe .
+
+#################################################################
+# Object properties
+#################################################################
+
+sro:hasIngredientUsage a owl:ObjectProperty ;
+    rdfs:label "has ingredient usage"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:IngredientUsage .
+
+sro:usesIngredient a owl:ObjectProperty ;
+    rdfs:label "uses ingredient"@en ;
+    rdfs:domain sro:IngredientUsage ;
+    rdfs:range sro:Ingredient .
+
+sro:hasPreparationStep a owl:ObjectProperty ;
+    rdfs:label "has preparation step"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:PreparationStep .
+
+sro:nextStep a owl:ObjectProperty, owl:IrreflexiveProperty ;
+    rdfs:label "next step"@en ;
+    rdfs:domain sro:PreparationStep ;
+    rdfs:range sro:PreparationStep .
+
+sro:precedesStep a owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:label "precedes step"@en ;
+    rdfs:domain sro:PreparationStep ;
+    rdfs:range sro:PreparationStep .
+
+sro:requiresUtility a owl:ObjectProperty ;
+    rdfs:label "requires utility"@en ;
+    rdfs:domain sro:PreparationStep ;
+    rdfs:range sro:KitchenUtility .
+
+sro:hasNutritionProfile a owl:ObjectProperty ;
+    rdfs:label "has nutrition profile"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:NutritionProfile .
+
+sro:suitableForDiet a owl:ObjectProperty ;
+    rdfs:label "suitable for diet"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:DietType ;
+    rdfs:seeAlso schema:suitableForDiet .
+
+sro:hasCuisine a owl:ObjectProperty ;
+    rdfs:label "has cuisine"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:Cuisine ;
+    rdfs:seeAlso schema:recipeCuisine .
+
+sro:hasCourseCategory a owl:ObjectProperty ;
+    rdfs:label "has course category"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:CourseCategory ;
+    rdfs:seeAlso schema:recipeCategory .
+
+sro:hasCookingMethod a owl:ObjectProperty ;
+    rdfs:label "has cooking method"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:CookingMethod ;
+    rdfs:seeAlso schema:cookingMethod .
+
+sro:hasAllergen a owl:ObjectProperty ;
+    rdfs:label "has allergen"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:Allergen .
+
+sro:hasUnit a owl:ObjectProperty ;
+    rdfs:label "has unit"@en ;
+    rdfs:domain sro:IngredientUsage ;
+    rdfs:range sro:Unit ;
+    rdfs:seeAlso qudt:unit .
+
+sro:derivedFromSource a owl:ObjectProperty ;
+    rdfs:label "derived from source"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:DataSource ;
+    rdfs:seeAlso prov:wasDerivedFrom .
+
+sro:matchesPreference a owl:ObjectProperty ;
+    rdfs:label "matches preference"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range sro:UserPreference .
+
+#################################################################
+# Data properties
+#################################################################
+
+sro:quantityValue a owl:DatatypeProperty ;
+    rdfs:label "quantity value"@en ;
+    rdfs:domain sro:IngredientUsage ;
+    rdfs:range xsd:decimal .
+
+sro:unitLabel a owl:DatatypeProperty ;
+    rdfs:label "unit label"@en ;
+    rdfs:domain sro:IngredientUsage ;
+    rdfs:range xsd:string .
+
+sro:preparationState a owl:DatatypeProperty ;
+    rdfs:label "preparation state"@en ;
+    rdfs:domain sro:IngredientUsage ;
+    rdfs:range xsd:string .
+
+sro:stepNumber a owl:DatatypeProperty ;
+    rdfs:label "step number"@en ;
+    rdfs:domain sro:PreparationStep ;
+    rdfs:range xsd:integer .
+
+sro:instructionText a owl:DatatypeProperty ;
+    rdfs:label "instruction text"@en ;
+    rdfs:domain sro:PreparationStep ;
+    rdfs:range xsd:string .
+
+sro:prepTimeMinutes a owl:DatatypeProperty ;
+    rdfs:label "prep time in minutes"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range xsd:integer ;
+    rdfs:seeAlso schema:prepTime .
+
+sro:cookTimeMinutes a owl:DatatypeProperty ;
+    rdfs:label "cook time in minutes"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range xsd:integer ;
+    rdfs:seeAlso schema:cookTime .
+
+sro:totalTimeMinutes a owl:DatatypeProperty ;
+    rdfs:label "total time in minutes"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range xsd:integer ;
+    rdfs:seeAlso schema:totalTime .
+
+sro:servings a owl:DatatypeProperty ;
+    rdfs:label "servings"@en ;
+    rdfs:domain sro:Recipe ;
+    rdfs:range xsd:integer ;
+    rdfs:seeAlso schema:recipeYield .
+
+sro:caloriesPerServing a owl:DatatypeProperty ;
+    rdfs:label "calories per serving"@en ;
+    rdfs:domain sro:NutritionProfile ;
+    rdfs:range xsd:decimal ;
+    rdfs:seeAlso schema:calories .
+
+sro:proteinGrams a owl:DatatypeProperty ;
+    rdfs:label "protein grams"@en ;
+    rdfs:domain sro:NutritionProfile ;
+    rdfs:range xsd:decimal .
+
+sro:fatGrams a owl:DatatypeProperty ;
+    rdfs:label "fat grams"@en ;
+    rdfs:domain sro:NutritionProfile ;
+    rdfs:range xsd:decimal .
+
+sro:carbohydrateGrams a owl:DatatypeProperty ;
+    rdfs:label "carbohydrate grams"@en ;
+    rdfs:domain sro:NutritionProfile ;
+    rdfs:range xsd:decimal .
+
+sro:sourceUrl a owl:DatatypeProperty ;
+    rdfs:label "source URL"@en ;
+    rdfs:domain sro:DataSource ;
+    rdfs:range xsd:anyURI .
+
+sro:extractionConfidence a owl:DatatypeProperty ;
+    rdfs:label "extraction confidence"@en ;
+    rdfs:domain owl:Thing ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Confidence assigned during semi-automatic extraction or manual validation."@en .
+
+sro:fdcId a owl:DatatypeProperty ;
+    rdfs:label "FoodData Central identifier"@en ;
+    rdfs:domain sro:Ingredient ;
+    rdfs:range xsd:string .
+
+#################################################################
+# Controlled individuals
+#################################################################
+
+sro:VeganDiet a sro:DietType ; rdfs:label "Vegan"@en .
+sro:VegetarianDiet a sro:DietType ; rdfs:label "Vegetarian"@en .
+sro:GlutenFreeDiet a sro:DietType ; rdfs:label "Gluten-free"@en .
+sro:HighProteinDiet a sro:DietType ; rdfs:label "High-protein"@en .
+
+sro:MediterraneanCuisine a sro:Cuisine ; rdfs:label "Mediterranean"@en .
+sro:InternationalCuisine a sro:Cuisine ; rdfs:label "International"@en .
+
+sro:SaladCourse a sro:CourseCategory ; rdfs:label "Salad"@en .
+sro:MainCourse a sro:CourseCategory ; rdfs:label "Main course"@en .
+sro:BreakfastCourse a sro:CourseCategory ; rdfs:label "Breakfast"@en .
+
+sro:Mixing a sro:CookingMethod ; rdfs:label "Mixing"@en .
+sro:Baking a sro:CookingMethod ; rdfs:label "Baking"@en .
+sro:Boiling a sro:CookingMethod ; rdfs:label "Boiling"@en .
+sro:Frying a sro:CookingMethod ; rdfs:label "Frying"@en .
+
+sro:Knife a sro:KitchenUtility ; rdfs:label "Knife"@en .
+sro:CuttingBoard a sro:KitchenUtility ; rdfs:label "Cutting board"@en .
+sro:MixingBowl a sro:KitchenUtility ; rdfs:label "Mixing bowl"@en .
+sro:Pan a sro:KitchenUtility ; rdfs:label "Pan"@en .
+sro:Pot a sro:KitchenUtility ; rdfs:label "Pot"@en .
+
+sro:Gram a sro:Unit ; rdfs:label "gram"@en ; skos:exactMatch unit:GM .
+sro:Milliliter a sro:Unit ; rdfs:label "milliliter"@en ; skos:exactMatch unit:MilliL .
+sro:Piece a sro:Unit ; rdfs:label "piece"@en .
+sro:Tablespoon a sro:Unit ; rdfs:label "tablespoon"@en .
+
+sro:MilkAllergen a sro:Allergen ; rdfs:label "Milk"@en .
+sro:EggAllergen a sro:Allergen ; rdfs:label "Egg"@en .
+sro:GlutenAllergen a sro:Allergen ; rdfs:label "Gluten"@en .
+sro:NutAllergen a sro:Allergen ; rdfs:label "Tree nut"@en .
+
+sro:ManualTestData a sro:DataSource ;
+    rdfs:label "Manual Phase 2 test data"@en ;
+    sro:sourceUrl "https://example.org/sro/manual-phase2-test-data"^^xsd:anyURI .
+
+#################################################################
+# Ingredient individuals
+#################################################################
+
+sro:Chickpea a sro:PlantBasedIngredient ; rdfs:label "chickpea"@en ; sro:fdcId "FDC-example-chickpea" .
+sro:Cucumber a sro:PlantBasedIngredient ; rdfs:label "cucumber"@en .
+sro:Tomato a sro:PlantBasedIngredient ; rdfs:label "tomato"@en .
+sro:OliveOil a sro:PlantBasedIngredient ; rdfs:label "olive oil"@en .
+sro:LemonJuice a sro:PlantBasedIngredient ; rdfs:label "lemon juice"@en .
+sro:Egg a sro:EggIngredient ; rdfs:label "egg"@en .
+sro:Spinach a sro:PlantBasedIngredient ; rdfs:label "spinach"@en .
+sro:Cheese a sro:DairyIngredient ; rdfs:label "cheese"@en .
+sro:ChickenBreast a sro:MeatIngredient ; rdfs:label "chicken breast"@en .
+sro:Rice a sro:PlantBasedIngredient ; rdfs:label "rice"@en .
+sro:Broccoli a sro:PlantBasedIngredient ; rdfs:label "broccoli"@en .
+
+#################################################################
+# Example recipes for Phase 2 validation
+#################################################################
+
+sro:MediterraneanChickpeaSalad a sro:Recipe, sro:VeganRecipe, sro:GlutenFreeRecipe ;
+    rdfs:label "Mediterranean Chickpea Salad"@en ;
+    sro:prepTimeMinutes 10 ;
+    sro:cookTimeMinutes 0 ;
+    sro:totalTimeMinutes 10 ;
+    sro:servings 2 ;
+    sro:suitableForDiet sro:VeganDiet, sro:VegetarianDiet, sro:GlutenFreeDiet ;
+    sro:hasCuisine sro:MediterraneanCuisine ;
+    sro:hasCourseCategory sro:SaladCourse ;
+    sro:hasCookingMethod sro:Mixing ;
+    sro:derivedFromSource sro:ManualTestData ;
+    sro:hasNutritionProfile sro:ChickpeaSaladNutrition ;
+    sro:hasIngredientUsage sro:ChickpeaSalad_ChickpeaUsage,
+        sro:ChickpeaSalad_CucumberUsage,
+        sro:ChickpeaSalad_TomatoUsage,
+        sro:ChickpeaSalad_OliveOilUsage,
+        sro:ChickpeaSalad_LemonUsage ;
+    sro:hasPreparationStep sro:ChickpeaSalad_Step1,
+        sro:ChickpeaSalad_Step2,
+        sro:ChickpeaSalad_Step3 .
+
+sro:ChickpeaSaladNutrition a sro:NutritionProfile ;
+    sro:caloriesPerServing 250 ;
+    sro:proteinGrams 10 ;
+    sro:fatGrams 12 ;
+    sro:carbohydrateGrams 28 .
+
+sro:ChickpeaSalad_ChickpeaUsage a sro:IngredientUsage ; sro:usesIngredient sro:Chickpea ; sro:quantityValue 240 ; sro:unitLabel "gram" ; sro:hasUnit sro:Gram ; sro:extractionConfidence 1.0 .
+sro:ChickpeaSalad_CucumberUsage a sro:IngredientUsage ; sro:usesIngredient sro:Cucumber ; sro:quantityValue 1 ; sro:unitLabel "piece" ; sro:hasUnit sro:Piece ; sro:preparationState "diced" ; sro:extractionConfidence 1.0 .
+sro:ChickpeaSalad_TomatoUsage a sro:IngredientUsage ; sro:usesIngredient sro:Tomato ; sro:quantityValue 2 ; sro:unitLabel "piece" ; sro:hasUnit sro:Piece ; sro:preparationState "diced" ; sro:extractionConfidence 1.0 .
+sro:ChickpeaSalad_OliveOilUsage a sro:IngredientUsage ; sro:usesIngredient sro:OliveOil ; sro:quantityValue 2 ; sro:unitLabel "tablespoon" ; sro:hasUnit sro:Tablespoon ; sro:extractionConfidence 1.0 .
+sro:ChickpeaSalad_LemonUsage a sro:IngredientUsage ; sro:usesIngredient sro:LemonJuice ; sro:quantityValue 1 ; sro:unitLabel "tablespoon" ; sro:hasUnit sro:Tablespoon ; sro:extractionConfidence 1.0 .
+
+sro:ChickpeaSalad_Step1 a sro:PreparationStep ; sro:stepNumber 1 ; sro:instructionText "Dice cucumber and tomatoes."@en ; sro:requiresUtility sro:Knife, sro:CuttingBoard ; sro:nextStep sro:ChickpeaSalad_Step2 ; sro:precedesStep sro:ChickpeaSalad_Step2, sro:ChickpeaSalad_Step3 .
+sro:ChickpeaSalad_Step2 a sro:PreparationStep ; sro:stepNumber 2 ; sro:instructionText "Combine chickpeas, cucumber, tomatoes, olive oil, and lemon juice in a mixing bowl."@en ; sro:requiresUtility sro:MixingBowl ; sro:nextStep sro:ChickpeaSalad_Step3 ; sro:precedesStep sro:ChickpeaSalad_Step3 .
+sro:ChickpeaSalad_Step3 a sro:PreparationStep ; sro:stepNumber 3 ; sro:instructionText "Mix and serve chilled."@en ; sro:requiresUtility sro:MixingBowl .
+
+sro:VegetableOmelette a sro:Recipe, sro:VegetarianRecipe, sro:GlutenFreeRecipe ;
+    rdfs:label "Vegetable Omelette"@en ;
+    sro:prepTimeMinutes 5 ;
+    sro:cookTimeMinutes 8 ;
+    sro:totalTimeMinutes 13 ;
+    sro:servings 1 ;
+    sro:suitableForDiet sro:VegetarianDiet, sro:GlutenFreeDiet ;
+    sro:hasCuisine sro:InternationalCuisine ;
+    sro:hasCourseCategory sro:BreakfastCourse ;
+    sro:hasCookingMethod sro:Frying ;
+    sro:hasAllergen sro:EggAllergen, sro:MilkAllergen ;
+    sro:derivedFromSource sro:ManualTestData ;
+    sro:hasNutritionProfile sro:OmeletteNutrition ;
+    sro:hasIngredientUsage sro:Omelette_EggUsage, sro:Omelette_SpinachUsage, sro:Omelette_CheeseUsage ;
+    sro:hasPreparationStep sro:Omelette_Step1, sro:Omelette_Step2 .
+
+sro:OmeletteNutrition a sro:NutritionProfile ;
+    sro:caloriesPerServing 310 ;
+    sro:proteinGrams 22 ;
+    sro:fatGrams 22 ;
+    sro:carbohydrateGrams 4 .
+
+sro:Omelette_EggUsage a sro:IngredientUsage ; sro:usesIngredient sro:Egg ; sro:quantityValue 2 ; sro:unitLabel "piece" ; sro:hasUnit sro:Piece ; sro:extractionConfidence 1.0 .
+sro:Omelette_SpinachUsage a sro:IngredientUsage ; sro:usesIngredient sro:Spinach ; sro:quantityValue 50 ; sro:unitLabel "gram" ; sro:hasUnit sro:Gram ; sro:extractionConfidence 1.0 .
+sro:Omelette_CheeseUsage a sro:IngredientUsage ; sro:usesIngredient sro:Cheese ; sro:quantityValue 30 ; sro:unitLabel "gram" ; sro:hasUnit sro:Gram ; sro:extractionConfidence 1.0 .
+
+sro:Omelette_Step1 a sro:PreparationStep ; sro:stepNumber 1 ; sro:instructionText "Beat eggs and add spinach and cheese."@en ; sro:requiresUtility sro:MixingBowl ; sro:nextStep sro:Omelette_Step2 ; sro:precedesStep sro:Omelette_Step2 .
+sro:Omelette_Step2 a sro:PreparationStep ; sro:stepNumber 2 ; sro:instructionText "Cook the mixture in a pan until set."@en ; sro:requiresUtility sro:Pan .
+
+sro:ChickenRiceBowl a sro:Recipe ;
+    rdfs:label "Chicken Rice Bowl"@en ;
+    sro:prepTimeMinutes 10 ;
+    sro:cookTimeMinutes 25 ;
+    sro:totalTimeMinutes 35 ;
+    sro:servings 2 ;
+    sro:suitableForDiet sro:HighProteinDiet ;
+    sro:hasCuisine sro:InternationalCuisine ;
+    sro:hasCourseCategory sro:MainCourse ;
+    sro:hasCookingMethod sro:Boiling ;
+    sro:derivedFromSource sro:ManualTestData ;
+    sro:hasNutritionProfile sro:ChickenRiceBowlNutrition ;
+    sro:hasIngredientUsage sro:ChickenRice_ChickenUsage, sro:ChickenRice_RiceUsage, sro:ChickenRice_BroccoliUsage ;
+    sro:hasPreparationStep sro:ChickenRice_Step1, sro:ChickenRice_Step2 .
+
+sro:ChickenRiceBowlNutrition a sro:NutritionProfile ;
+    sro:caloriesPerServing 520 ;
+    sro:proteinGrams 42 ;
+    sro:fatGrams 12 ;
+    sro:carbohydrateGrams 58 .
+
+sro:ChickenRice_ChickenUsage a sro:IngredientUsage ; sro:usesIngredient sro:ChickenBreast ; sro:quantityValue 250 ; sro:unitLabel "gram" ; sro:hasUnit sro:Gram ; sro:extractionConfidence 1.0 .
+sro:ChickenRice_RiceUsage a sro:IngredientUsage ; sro:usesIngredient sro:Rice ; sro:quantityValue 180 ; sro:unitLabel "gram" ; sro:hasUnit sro:Gram ; sro:extractionConfidence 1.0 .
+sro:ChickenRice_BroccoliUsage a sro:IngredientUsage ; sro:usesIngredient sro:Broccoli ; sro:quantityValue 150 ; sro:unitLabel "gram" ; sro:hasUnit sro:Gram ; sro:extractionConfidence 1.0 .
+
+sro:ChickenRice_Step1 a sro:PreparationStep ; sro:stepNumber 1 ; sro:instructionText "Boil rice and broccoli until tender."@en ; sro:requiresUtility sro:Pot ; sro:nextStep sro:ChickenRice_Step2 ; sro:precedesStep sro:ChickenRice_Step2 .
+sro:ChickenRice_Step2 a sro:PreparationStep ; sro:stepNumber 2 ; sro:instructionText "Cook chicken breast and serve with rice and broccoli."@en ; sro:requiresUtility sro:Pan .

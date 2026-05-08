@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:sro="https://example.org/sro#"
+>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_Step2">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Combine chickpeas, cucumber, tomatoes, olive oil, and lemon juice in a mixing bowl.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#MixingBowl"/>
+    <sro:nextStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step3"/>
+    <sro:precedesStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#sourceUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">source URL</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#DataSource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#GlutenFreeRecipe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Gluten-free recipe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#Recipe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#HighProteinDiet">
+    <rdf:type rdf:resource="https://example.org/sro#DietType"/>
+    <rdfs:label xml:lang="en">High-protein</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSaladNutrition">
+    <rdf:type rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <sro:caloriesPerServing rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</sro:caloriesPerServing>
+    <sro:proteinGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sro:proteinGrams>
+    <sro:fatGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</sro:fatGrams>
+    <sro:carbohydrateGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</sro:carbohydrateGrams>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#fdcId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">FoodData Central identifier</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Ingredient"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRiceBowl">
+    <rdf:type rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:label xml:lang="en">Chicken Rice Bowl</rdfs:label>
+    <sro:prepTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sro:prepTimeMinutes>
+    <sro:cookTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</sro:cookTimeMinutes>
+    <sro:totalTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</sro:totalTimeMinutes>
+    <sro:servings rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:servings>
+    <sro:suitableForDiet rdf:resource="https://example.org/sro#HighProteinDiet"/>
+    <sro:hasCuisine rdf:resource="https://example.org/sro#InternationalCuisine"/>
+    <sro:hasCourseCategory rdf:resource="https://example.org/sro#MainCourse"/>
+    <sro:hasCookingMethod rdf:resource="https://example.org/sro#Boiling"/>
+    <sro:derivedFromSource rdf:resource="https://example.org/sro#ManualTestData"/>
+    <sro:hasNutritionProfile rdf:resource="https://example.org/sro#ChickenRiceBowlNutrition"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickenRice_ChickenUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickenRice_RiceUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickenRice_BroccoliUsage"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#ChickenRice_Step1"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#ChickenRice_Step2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#derivedFromSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">derived from source</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#DataSource"/>
+    <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRice_RiceUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Rice"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">180</sro:quantityValue>
+    <sro:unitLabel>gram</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Gram"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRiceBowlNutrition">
+    <rdf:type rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <sro:caloriesPerServing rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">520</sro:caloriesPerServing>
+    <sro:proteinGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</sro:proteinGrams>
+    <sro:fatGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</sro:fatGrams>
+    <sro:carbohydrateGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</sro:carbohydrateGrams>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#DairyIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Dairy ingredient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#AnimalBasedIngredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#NutritionProfile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Nutrition profile</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://schema.org/NutritionInformation"/>
+    <rdfs:comment xml:lang="en">Nutritional values for one serving or for the whole recipe.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Omelette_Step1">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Beat eggs and add spinach and cheese.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#MixingBowl"/>
+    <sro:nextStep rdf:resource="https://example.org/sro#Omelette_Step2"/>
+    <sro:precedesStep rdf:resource="https://example.org/sro#Omelette_Step2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Knife">
+    <rdf:type rdf:resource="https://example.org/sro#KitchenUtility"/>
+    <rdfs:label xml:lang="en">Knife</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#quantityValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">quantity value</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#OmeletteNutrition">
+    <rdf:type rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <sro:caloriesPerServing rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">310</sro:caloriesPerServing>
+    <sro:proteinGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</sro:proteinGrams>
+    <sro:fatGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</sro:fatGrams>
+    <sro:carbohydrateGrams rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</sro:carbohydrateGrams>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#CuttingBoard">
+    <rdf:type rdf:resource="https://example.org/sro#KitchenUtility"/>
+    <rdfs:label xml:lang="en">Cutting board</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#EggIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Egg ingredient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#AnimalBasedIngredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRice_Step1">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Boil rice and broccoli until tender.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#Pot"/>
+    <sro:nextStep rdf:resource="https://example.org/sro#ChickenRice_Step2"/>
+    <sro:precedesStep rdf:resource="https://example.org/sro#ChickenRice_Step2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Chickpea">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">chickpea</rdfs:label>
+    <sro:fdcId>FDC-example-chickpea</sro:fdcId>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#carbohydrateGrams">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">carbohydrate grams</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#MediterraneanChickpeaSalad">
+    <rdf:type rdf:resource="https://example.org/sro#Recipe"/>
+    <rdf:type rdf:resource="https://example.org/sro#VeganRecipe"/>
+    <rdf:type rdf:resource="https://example.org/sro#GlutenFreeRecipe"/>
+    <rdfs:label xml:lang="en">Mediterranean Chickpea Salad</rdfs:label>
+    <sro:prepTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sro:prepTimeMinutes>
+    <sro:cookTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sro:cookTimeMinutes>
+    <sro:totalTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</sro:totalTimeMinutes>
+    <sro:servings rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:servings>
+    <sro:suitableForDiet rdf:resource="https://example.org/sro#VeganDiet"/>
+    <sro:suitableForDiet rdf:resource="https://example.org/sro#VegetarianDiet"/>
+    <sro:suitableForDiet rdf:resource="https://example.org/sro#GlutenFreeDiet"/>
+    <sro:hasCuisine rdf:resource="https://example.org/sro#MediterraneanCuisine"/>
+    <sro:hasCourseCategory rdf:resource="https://example.org/sro#SaladCourse"/>
+    <sro:hasCookingMethod rdf:resource="https://example.org/sro#Mixing"/>
+    <sro:derivedFromSource rdf:resource="https://example.org/sro#ManualTestData"/>
+    <sro:hasNutritionProfile rdf:resource="https://example.org/sro#ChickpeaSaladNutrition"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickpeaSalad_ChickpeaUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickpeaSalad_CucumberUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickpeaSalad_TomatoUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickpeaSalad_OliveOilUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#ChickpeaSalad_LemonUsage"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step1"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step2"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_Step1">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Dice cucumber and tomatoes.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#Knife"/>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#CuttingBoard"/>
+    <sro:nextStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step2"/>
+    <sro:precedesStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step2"/>
+    <sro:precedesStep rdf:resource="https://example.org/sro#ChickpeaSalad_Step3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Pan">
+    <rdf:type rdf:resource="https://example.org/sro#KitchenUtility"/>
+    <rdfs:label xml:lang="en">Pan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#totalTimeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">total time in minutes</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/totalTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Gram">
+    <rdf:type rdf:resource="https://example.org/sro#Unit"/>
+    <rdfs:label xml:lang="en">gram</rdfs:label>
+    <skos:exactMatch rdf:resource="http://qudt.org/vocab/unit/GM"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#VegetableOmelette">
+    <rdf:type rdf:resource="https://example.org/sro#Recipe"/>
+    <rdf:type rdf:resource="https://example.org/sro#VegetarianRecipe"/>
+    <rdf:type rdf:resource="https://example.org/sro#GlutenFreeRecipe"/>
+    <rdfs:label xml:lang="en">Vegetable Omelette</rdfs:label>
+    <sro:prepTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</sro:prepTimeMinutes>
+    <sro:cookTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sro:cookTimeMinutes>
+    <sro:totalTimeMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</sro:totalTimeMinutes>
+    <sro:servings rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sro:servings>
+    <sro:suitableForDiet rdf:resource="https://example.org/sro#VegetarianDiet"/>
+    <sro:suitableForDiet rdf:resource="https://example.org/sro#GlutenFreeDiet"/>
+    <sro:hasCuisine rdf:resource="https://example.org/sro#InternationalCuisine"/>
+    <sro:hasCourseCategory rdf:resource="https://example.org/sro#BreakfastCourse"/>
+    <sro:hasCookingMethod rdf:resource="https://example.org/sro#Frying"/>
+    <sro:hasAllergen rdf:resource="https://example.org/sro#EggAllergen"/>
+    <sro:hasAllergen rdf:resource="https://example.org/sro#MilkAllergen"/>
+    <sro:derivedFromSource rdf:resource="https://example.org/sro#ManualTestData"/>
+    <sro:hasNutritionProfile rdf:resource="https://example.org/sro#OmeletteNutrition"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#Omelette_EggUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#Omelette_SpinachUsage"/>
+    <sro:hasIngredientUsage rdf:resource="https://example.org/sro#Omelette_CheeseUsage"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#Omelette_Step1"/>
+    <sro:hasPreparationStep rdf:resource="https://example.org/sro#Omelette_Step2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Cucumber">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">cucumber</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#prepTimeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">prep time in minutes</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/prepTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#VeganDiet">
+    <rdf:type rdf:resource="https://example.org/sro#DietType"/>
+    <rdfs:label xml:lang="en">Vegan</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#nextStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    <rdfs:label xml:lang="en">next step</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#PreparationStep"/>
+    <rdfs:range rdf:resource="https://example.org/sro#PreparationStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Recipe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Recipe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://schema.org/Recipe"/>
+    <rdfs:comment xml:lang="en">A cooking recipe with ingredients, ordered steps, time, diet, cuisine, nutrition, and source metadata.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Tomato">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">tomato</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#suitableForDiet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">suitable for diet</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#DietType"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/suitableForDiet"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#MeatIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Meat ingredient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#AnimalBasedIngredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#cookTimeMinutes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">cook time in minutes</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/cookTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#PreparationStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Preparation step</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://schema.org/HowToStep"/>
+    <rdfs:comment xml:lang="en">An ordered instruction in a recipe workflow.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#servings">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">servings</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/recipeYield"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#unitLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">unit label</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Omelette_EggUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Egg"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:quantityValue>
+    <sro:unitLabel>piece</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Piece"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Omelette_CheeseUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Cheese"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</sro:quantityValue>
+    <sro:unitLabel>gram</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Gram"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#UserPreference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">User preference</rdfs:label>
+    <rdfs:comment xml:lang="en">Preference profile for future personalized recipe recommendation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#CourseCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Course category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#preparationState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">preparation state</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#MediterraneanCuisine">
+    <rdf:type rdf:resource="https://example.org/sro#Cuisine"/>
+    <rdfs:label xml:lang="en">Mediterranean</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#instructionText">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">instruction text</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#PreparationStep"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRice_Step2">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Cook chicken breast and serve with rice and broccoli.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#Pan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#VegetarianDiet">
+    <rdf:type rdf:resource="https://example.org/sro#DietType"/>
+    <rdfs:label xml:lang="en">Vegetarian</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRice_ChickenUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#ChickenBreast"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</sro:quantityValue>
+    <sro:unitLabel>gram</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Gram"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Allergen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Allergen</rdfs:label>
+    <rdfs:comment xml:lang="en">A possible allergen associated with a recipe or ingredient.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Boiling">
+    <rdf:type rdf:resource="https://example.org/sro#CookingMethod"/>
+    <rdfs:label xml:lang="en">Boiling</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:title xml:lang="en">Smart Recipe Ontology (SRO)</dcterms:title>
+    <dcterms:creator xml:lang="en">Aleyna Gultekin 220315013</dcterms:creator>
+    <dcterms:creator xml:lang="en">Esra Sepik 220315015</dcterms:creator>
+    <dcterms:creator xml:lang="en">Sinem Tanriver 220315073</dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-04-25</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-05-08</dcterms:modified>
+    <owl:versionInfo>2.0</owl:versionInfo>
+    <dcterms:description xml:lang="en">Phase 2 extension of the Smart Recipe Ontology. The ontology represents recipes, ingredient usages, preparation steps, dietary tags, nutrition profiles, utilities, cuisine, data provenance, and data-acquisition confidence for recipe search and question answering.</dcterms:description>
+    <rdfs:seeAlso rdf:resource="https://schema.org/Recipe"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/NutritionInformation"/>
+    <rdfs:seeAlso rdf:resource="http://qudt.org/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#usesIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">uses ingredient</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <rdfs:range rdf:resource="https://example.org/sro#Ingredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasCourseCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has course category</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#CourseCategory"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/recipeCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Spinach">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">spinach</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_Step3">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Mix and serve chilled.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#MixingBowl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Omelette_SpinachUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Spinach"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</sro:quantityValue>
+    <sro:unitLabel>gram</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Gram"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Omelette_Step2">
+    <rdf:type rdf:resource="https://example.org/sro#PreparationStep"/>
+    <sro:stepNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:stepNumber>
+    <sro:instructionText xml:lang="en">Cook the mixture in a pan until set.</sro:instructionText>
+    <sro:requiresUtility rdf:resource="https://example.org/sro#Pan"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#GlutenContainingIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Gluten-containing ingredient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#Ingredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasCookingMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has cooking method</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#CookingMethod"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/cookingMethod"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Unit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Unit</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://qudt.org/schema/qudt/Unit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#proteinGrams">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">protein grams</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasIngredientUsage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has ingredient usage</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#IngredientUsage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#MilkAllergen">
+    <rdf:type rdf:resource="https://example.org/sro#Allergen"/>
+    <rdfs:label xml:lang="en">Milk</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#CookingMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Cooking method</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#precedesStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">precedes step</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#PreparationStep"/>
+    <rdfs:range rdf:resource="https://example.org/sro#PreparationStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_LemonUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#LemonJuice"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sro:quantityValue>
+    <sro:unitLabel>tablespoon</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Tablespoon"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Egg">
+    <rdf:type rdf:resource="https://example.org/sro#EggIngredient"/>
+    <rdfs:label xml:lang="en">egg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#fatGrams">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">fat grams</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#KitchenUtility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Kitchen utility</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#MainCourse">
+    <rdf:type rdf:resource="https://example.org/sro#CourseCategory"/>
+    <rdfs:label xml:lang="en">Main course</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#SaladCourse">
+    <rdf:type rdf:resource="https://example.org/sro#CourseCategory"/>
+    <rdfs:label xml:lang="en">Salad</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_TomatoUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Tomato"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:quantityValue>
+    <sro:unitLabel>piece</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Piece"/>
+    <sro:preparationState>diced</sro:preparationState>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#extractionConfidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">extraction confidence</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment xml:lang="en">Confidence assigned during semi-automatic extraction or manual validation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Frying">
+    <rdf:type rdf:resource="https://example.org/sro#CookingMethod"/>
+    <rdfs:label xml:lang="en">Frying</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenBreast">
+    <rdf:type rdf:resource="https://example.org/sro#MeatIngredient"/>
+    <rdfs:label xml:lang="en">chicken breast</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#requiresUtility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">requires utility</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#PreparationStep"/>
+    <rdfs:range rdf:resource="https://example.org/sro#KitchenUtility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickenRice_BroccoliUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Broccoli"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</sro:quantityValue>
+    <sro:unitLabel>gram</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Gram"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has unit</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <rdfs:range rdf:resource="https://example.org/sro#Unit"/>
+    <rdfs:seeAlso rdf:resource="http://qudt.org/schema/qudt/unit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#VeganRecipe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Vegan recipe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#VegetarianRecipe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#IngredientUsage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Ingredient usage</rdfs:label>
+    <rdfs:comment xml:lang="en">N-ary relation object connecting a recipe to an ingredient with quantity, unit, preparation state, and confidence.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#PlantBasedIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Plant-based ingredient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#Ingredient"/>
+    <owl:disjointWith rdf:resource="https://example.org/sro#MeatIngredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#GlutenFreeDiet">
+    <rdf:type rdf:resource="https://example.org/sro#DietType"/>
+    <rdfs:label xml:lang="en">Gluten-free</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Ingredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Ingredient</rdfs:label>
+    <rdfs:comment xml:lang="en">A food item used in a recipe.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#matchesPreference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">matches preference</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#UserPreference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#AnimalBasedIngredient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Animal-based ingredient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#Ingredient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Piece">
+    <rdf:type rdf:resource="https://example.org/sro#Unit"/>
+    <rdfs:label xml:lang="en">piece</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_ChickpeaUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Chickpea"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</sro:quantityValue>
+    <sro:unitLabel>gram</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Gram"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Baking">
+    <rdf:type rdf:resource="https://example.org/sro#CookingMethod"/>
+    <rdfs:label xml:lang="en">Baking</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ManualTestData">
+    <rdf:type rdf:resource="https://example.org/sro#DataSource"/>
+    <rdfs:label xml:lang="en">Manual Phase 2 test data</rdfs:label>
+    <sro:sourceUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://example.org/sro/manual-phase2-test-data</sro:sourceUrl>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Cheese">
+    <rdf:type rdf:resource="https://example.org/sro#DairyIngredient"/>
+    <rdfs:label xml:lang="en">cheese</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Tablespoon">
+    <rdf:type rdf:resource="https://example.org/sro#Unit"/>
+    <rdfs:label xml:lang="en">tablespoon</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#stepNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">step number</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#PreparationStep"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#VegetarianRecipe">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Vegetarian recipe</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/sro#Recipe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_CucumberUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#Cucumber"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sro:quantityValue>
+    <sro:unitLabel>piece</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Piece"/>
+    <sro:preparationState>diced</sro:preparationState>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#BreakfastCourse">
+    <rdf:type rdf:resource="https://example.org/sro#CourseCategory"/>
+    <rdfs:label xml:lang="en">Breakfast</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasNutritionProfile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has nutrition profile</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#NutritionProfile"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasAllergen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has allergen</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#Allergen"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasCuisine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has cuisine</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#Cuisine"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/recipeCuisine"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Rice">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">rice</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#DietType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Diet type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#OliveOil">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">olive oil</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#DataSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Data source</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#ChickpeaSalad_OliveOilUsage">
+    <rdf:type rdf:resource="https://example.org/sro#IngredientUsage"/>
+    <sro:usesIngredient rdf:resource="https://example.org/sro#OliveOil"/>
+    <sro:quantityValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sro:quantityValue>
+    <sro:unitLabel>tablespoon</sro:unitLabel>
+    <sro:hasUnit rdf:resource="https://example.org/sro#Tablespoon"/>
+    <sro:extractionConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</sro:extractionConfidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Mixing">
+    <rdf:type rdf:resource="https://example.org/sro#CookingMethod"/>
+    <rdfs:label xml:lang="en">Mixing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#InternationalCuisine">
+    <rdf:type rdf:resource="https://example.org/sro#Cuisine"/>
+    <rdfs:label xml:lang="en">International</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Broccoli">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">broccoli</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#EggAllergen">
+    <rdf:type rdf:resource="https://example.org/sro#Allergen"/>
+    <rdfs:label xml:lang="en">Egg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#caloriesPerServing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">calories per serving</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#NutritionProfile"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:seeAlso rdf:resource="https://schema.org/calories"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#hasPreparationStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has preparation step</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/sro#Recipe"/>
+    <rdfs:range rdf:resource="https://example.org/sro#PreparationStep"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Milliliter">
+    <rdf:type rdf:resource="https://example.org/sro#Unit"/>
+    <rdfs:label xml:lang="en">milliliter</rdfs:label>
+    <skos:exactMatch rdf:resource="http://qudt.org/vocab/unit/MilliL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Cuisine">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Cuisine</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#NutAllergen">
+    <rdf:type rdf:resource="https://example.org/sro#Allergen"/>
+    <rdfs:label xml:lang="en">Tree nut</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#Pot">
+    <rdf:type rdf:resource="https://example.org/sro#KitchenUtility"/>
+    <rdfs:label xml:lang="en">Pot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#GlutenAllergen">
+    <rdf:type rdf:resource="https://example.org/sro#Allergen"/>
+    <rdfs:label xml:lang="en">Gluten</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#MixingBowl">
+    <rdf:type rdf:resource="https://example.org/sro#KitchenUtility"/>
+    <rdfs:label xml:lang="en">Mixing bowl</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/sro#LemonJuice">
+    <rdf:type rdf:resource="https://example.org/sro#PlantBasedIngredient"/>
+    <rdfs:label xml:lang="en">lemon juice</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
