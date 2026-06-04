@@ -1,0 +1,112 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix sro:  <https://example.org/sro#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+# Smart Recipe Ontology (SRO) - SHACL Validation Shapes
+# File: shacl/shapes.ttl
+#################################################################
+
+sro:RecipeShape
+    a sh:NodeShape ;
+    sh:targetClass sro:Recipe ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "Each recipe must have at least one label/title." ;
+    ] ;
+    sh:property [
+        sh:path sro:hasIngredientUsage ;
+        sh:minCount 1 ;
+        sh:message "Each recipe must have at least one ingredient usage." ;
+    ] ;
+    sh:property [
+        sh:path sro:hasPreparationStep ;
+        sh:minCount 1 ;
+        sh:message "Each recipe must have at least one preparation step." ;
+    ] ;
+    sh:property [
+        sh:path sro:totalTimeMinutes ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "Total time must be a non-negative integer value in minutes." ;
+    ] .
+
+sro:IngredientUsageShape
+    a sh:NodeShape ;
+    sh:targetClass sro:IngredientUsage ;
+    sh:property [
+        sh:path sro:usesIngredient ;
+        sh:minCount 1 ;
+        sh:class sro:Ingredient ;
+        sh:message "Each ingredient usage must refer to an ingredient." ;
+    ] ;
+    sh:property [
+        sh:path sro:quantityValue ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0 ;
+        sh:message "Ingredient quantity must be a non-negative decimal value." ;
+    ] ;
+    sh:property [
+        sh:path sro:unitLabel ;
+        sh:datatype xsd:string ;
+        sh:message "Unit label must be written as a string." ;
+    ] .
+
+sro:PreparationStepShape
+    a sh:NodeShape ;
+    sh:targetClass sro:PreparationStep ;
+    sh:property [
+        sh:path sro:stepNumber ;
+        sh:minCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Each preparation step must have a positive integer step number." ;
+    ] ;
+    sh:property [
+        sh:path sro:instructionText ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "Each preparation step must include instruction text." ;
+    ] .
+
+sro:NutritionProfileShape
+    a sh:NodeShape ;
+    sh:targetClass sro:NutritionProfile ;
+    sh:property [
+        sh:path sro:caloriesPerServing ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0 ;
+        sh:message "Calories per serving must be a non-negative decimal value." ;
+    ] ;
+    sh:property [
+        sh:path sro:servingSize ;
+        sh:datatype xsd:string ;
+        sh:message "Serving size must be written as a string." ;
+    ] .
+
+sro:DataSourceShape
+    a sh:NodeShape ;
+    sh:targetClass sro:DataSource ;
+    sh:property [
+        sh:path sro:sourceUrl ;
+        sh:datatype xsd:anyURI ;
+        sh:message "Source URL must be a valid URI." ;
+    ] .
+
+sro:UserPreferenceShape
+    a sh:NodeShape ;
+    sh:targetClass sro:UserPreference ;
+    sh:property [
+        sh:path sro:maxTimeMinutes ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 0 ;
+        sh:message "Maximum time preference must be a non-negative integer." ;
+    ] ;
+    sh:property [
+        sh:path sro:maxCalories ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0 ;
+        sh:message "Maximum calorie preference must be a non-negative decimal value." ;
+    ] .
